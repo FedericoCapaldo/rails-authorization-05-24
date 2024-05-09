@@ -47,6 +47,8 @@ class RestaurantsController < ApplicationController
 
   # DELETE /restaurants/1
   def destroy
+    authorize @restaurant
+
     @restaurant.destroy
     redirect_to restaurants_url, notice: "Restaurant was successfully destroyed.", status: :see_other
   end
