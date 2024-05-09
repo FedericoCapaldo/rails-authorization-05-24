@@ -19,6 +19,7 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants/1/edit
   def edit
+    authorize @restaurant
   end
 
   # POST /restaurants
@@ -35,6 +36,8 @@ class RestaurantsController < ApplicationController
 
   # PATCH/PUT /restaurants/1
   def update
+    authorize @restaurant
+
     if @restaurant.update(restaurant_params)
       redirect_to @restaurant, notice: "Restaurant was successfully updated.", status: :see_other
     else
