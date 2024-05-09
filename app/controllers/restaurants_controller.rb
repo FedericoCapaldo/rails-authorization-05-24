@@ -3,7 +3,7 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants
   def index
-    @restaurants = Restaurant.all
+    @restaurants = policy_scope(Restaurant)
   end
 
   # GET /restaurants/1
