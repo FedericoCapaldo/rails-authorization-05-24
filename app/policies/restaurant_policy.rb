@@ -17,7 +17,7 @@ class RestaurantPolicy < ApplicationPolicy
   end
 
   def new?
-    true
+    create?
   end
 
   def create?
@@ -25,7 +25,7 @@ class RestaurantPolicy < ApplicationPolicy
   end
 
   def edit?
-    user == record.user
+    update?
   end
 
   def update?
